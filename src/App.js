@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { HeaderNavBar } from "./components/Header.component";
+import { TextBody } from "./components/TextBody";
+import { PricingCard } from "./components/PricingCard";
+import cardDetails from "./data/data";
+import { Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState(true);
+  const itemsDetails = cardDetails;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderNavBar cart={cart} setCart={setCart} />
+      {/* <TextBody /> */}
+      <Container>
+        <Row md-4 sm-3 lg-4>
+          {itemsDetails.map((data) => (
+            <Col
+              lg-4
+              md-3
+              sm-3
+              className="d-flex justify-content-center align-items-center m-4 py-2 px-3 text-center"
+            >
+              <PricingCard
+                key={data.id}
+                // title={data.title}
+                // rating={data.rating}
+                // firstPrice={data.firstPrice}
+                // secondPrice={data.secondPrice}
+                // btnText={data.btnText}
+                // image={data.image}
+                // badge={data.badge}
+                card={data}
+                cart={cart}
+                setCart={setCart}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

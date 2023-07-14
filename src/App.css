@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbarHeader{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  background-color: aqua;
+  padding-right: 30px;
+}
+.container{
+  display: flex;
+padding-top: 10px;
+margin: 0;
+justify-content: space-around;
+align-items: center;
+
+}
+.addtoCartIcon{
+  color: rgb(122, 9, 65);
+  margin-right: 10px;
+  size: 20px;
+
+}
+.addToCartBtn{
+  display: flex;
+  padding-left: 42rem;
+}
+
+.container-border{
+  border: 2px solid brown;
+  padding-bottom: 10px;
+}
+.AddToCartIcon{
+  padding-right: 10px;
+}
+.addCartBtn{
+  padding-bottom: 10px;
+}
+.TextBody.container{
+  padding-top: 0;
+}
+div{
+  padding: 0;
+  margin: 0;
+  
+}
+.shopCart{
+  background-color: black;
+  color: aliceblue;
+}
+.card-edit{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* gap: 1px; */
+  height: 20rem;
+  width: 50%;
+  /* width: 100%; */
+border: 10px solid brown;  
+}
+.card-text{
+  /* padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 10px; */
+  /* border: 10px solid brown; */
+  
+
+
+}
+.price{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 20px;
 }
+.card-firstPrice{
 
-.App-link {
-  color: #61dafb;
+  padding-left: 15px; 
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-secondPrice{
+  padding-left: 10px;
 }
