@@ -54,7 +54,7 @@ function HeaderNavBar({ cart, setCart }) {
       {/* <Card text="white" className="shopCart" bg="black">
             <Card.Body>This is some text within a card body.</Card.Body>
         </Card> */}
-      <div className="h1 fs-1 text-center align-items-center text-bg-dark py-5">
+      <div className="h1 fs-1 fw-bolder text-center align-items-center text-bg-dark name-border">
         Shop in style{" "}
         <div className="fs-6 fw-normal lead text-white pt-3 ">
           With this shop hompeage template

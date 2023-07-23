@@ -9,21 +9,16 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useState } from "react";
 
 function App() {
-  const [cart, setCart] = useState(true);
+  const [cart, setCart] = useState(0);
   const itemsDetails = cardDetails;
   return (
     <div className="App">
       <HeaderNavBar cart={cart} setCart={setCart} />
       {/* <TextBody /> */}
       <Container>
-        <Row md-4 sm-3 lg-4>
+        <Row md-3 sm-3 lg-2>
           {itemsDetails.map((data) => (
-            <Col
-              lg-4
-              md-3
-              sm-3
-              className="d-flex justify-content-center align-items-center m-4 py-2 px-3 text-center"
-            >
+            <Col className="d-flex justify-content-center align-items-center m-1 py-2 px-3 text-center">
               <PricingCard
                 key={data.id}
                 // title={data.title}

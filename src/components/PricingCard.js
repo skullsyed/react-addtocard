@@ -5,9 +5,24 @@ import { Card, Badge } from "react-bootstrap";
 import { useState } from "react";
 import { HeaderNavBar } from "./Header.component";
 
-const PricingCard = ({ card }) => {
-  const ratingDynamics = {
-    button: cart ? "card added" : "add to cart",
+const PricingCard = ({ card, cart, setCart }) => {
+  const [btnText, setBtnText] = useState("Add to Cart");
+  const handleAddToCard = async () => {
+    // if (btnText != "Remove from Cart" && cart >= 0) {
+    if (cart <= 0) {
+      await setCart((prevCount) => prevCount + 1);
+    } else {
+      await setCart((prevCount) => prevCount - 1);
+    }
+
+    // setBtnText(cart > cart.length ? "Add to Cart" : "Remove from Cart");
+    setBtnText(
+      cart <= 0
+        ? "Remove from Cart"
+        : card <= -0
+        ? "Add to Cart"
+        : "Add to Cart"
+    );
   };
   return (
     <div>
@@ -30,7 +45,6 @@ const PricingCard = ({ card }) => {
               </Badge>
             ) : null}
           </div>
-          ;
           <Card.Body className="h-5">
             <Card.Title>{card.title}</Card.Title>
             <div>{card.rating === true ? <div>⭐⭐⭐⭐⭐</div> : <p> </p>}</div>
@@ -51,11 +65,13 @@ const PricingCard = ({ card }) => {
             <Button
               variant="outline-dark "
               className="m-auto p-auto "
-              onClick={() => setCart(!cart)}
-              // style={ratingDynamics}
+              onClick={
+                // style = { btnStyle };
+                // setCart(cart + 1);
+                handleAddToCard
+              }
             >
-              {card.btnText}
-              {/* {ratingDynamics} */}
+              {btnText}
             </Button>
           </Card.Body>
         </Card>
